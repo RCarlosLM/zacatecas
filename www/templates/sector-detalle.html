@@ -1,0 +1,36 @@
+
+<ion-view view-title="{{sec.name_tag}}" id="detalle">
+  <ion-content class="padding">
+    <div class="bar bar-subheader item-input-inset bar-light" id="detalle">
+      <label class="item-input-wrapper">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" ng-model="buscarDato" placeholder="Buscar" />
+      </label>
+    </div>
+    <br><br><br>
+    <ion-refresher pulling-text="Actualizando..." on-refresh="cargarNuevosPosts()" content="5">
+    </ion-refresher>
+    <p ng-repeat="item in sec.info | filter:buscarDato" id="textoDetalle">            
+      <br>
+      <b>Nombre:</b> 
+      {{item.description}} <br>
+      <b>Organización:</b>
+      {{item.title}} <br>
+      <b>Formato:</b>
+      {{item.format}}<br>
+      <span am-time-ago="item.created" am-preprocess="unix"></span> <br>
+      <button class="button button-stable" id="cabecera" ng-click="abrirEnlace(item.url)">
+        <i class="icon ion-android-download"></i>
+      </button>
+    </p>
+    <p>
+      Se produjo el siguiente error:<br>
+      {{errorsote | json}}
+    </p>
+
+    <p>
+      Progreso descargado:
+      {{progreso.loaded }}
+    </p>
+  </ion-content>
+</ion-view>

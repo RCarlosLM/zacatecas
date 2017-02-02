@@ -1,0 +1,26 @@
+<ion-view view-title="Sectores" id="cabecera" >
+
+        <ion-content>
+      
+          <ul class="list list-inset" id="detalle">
+
+                <ion-item class="item-remove-animate item-avatar item-icon-right sickan" ng-repeat="sec in sector" href="#/tab/sectores/{{sec.id}}" type="item-text-wrap">
+                           
+                                    <img id="detalle" src="img/icon.png">
+                                     <b> {{sec.name_tag}} </b>
+                                    <!--<p>{{chat.lastText}}</p>-->
+                                    <i class="icon ion-chevron-right icon-accessory" id="cabecera" ></i>
+
+                </ion-item>
+
+           </ul>
+            
+          <!--<ion-list id="fo">-->
+              <!-- <p>
+                  {{chats | json}}
+              </p>-->
+          <!--</ion-list>-->
+        
+        </ion-content>
+
+</ion-view>

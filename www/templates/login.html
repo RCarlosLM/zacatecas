@@ -1,0 +1,78 @@
+<ion-view view-title="Registro" id="fo">
+  <ion-nav-bar class="f">
+    <ion-nav-buttons side="right">
+        <button class="button" id="inicio" ng-click="skip()" menu-close>skip</button>
+        <ion-nav-view name="tab-acercade"></ion-nav-view>
+        <!--<img class="prueba" src="img/prueba.png" ui-sref="app.principal" menu-close/>-->
+    </ion-nav-buttons>
+  </ion-nav-bar>
+     
+      <ion-content class="padding">
+
+          <br><br><br>
+        
+                <div class="list list-inset" id="select">
+                
+                    <form ng-submit="registrar()" >
+
+                    <label class="item-floating-label">
+                        <span class="input-label " id="t">Nombre Completo</span>
+                        <input type="text" id="fo" placeholder="Nombre Completo" ng-model="user.nombre_completo" required>
+                    </label>
+
+                        <br><br>
+                        <div class="list">
+
+                            <label class="item item-input item-select" id="fo">
+                                <div class="input-label">
+                                    <h5>Seleccionar Estado</h5>
+                                </div>
+                               
+                                <select  ng-model="user.seleccion" id="s" required>
+                                    <option>Aguascalientes</option>
+                                    <option>Baja California </option>
+                                    <option>Baja California Sur</option>
+                                    <option>Campeche </option>
+                                    <option>Chiapas</option>
+                                    <option>Chihuahua</option>
+                                    <option>Coahuila </option>
+                                    <option>Colima</option>
+                                    <option>Distrito Federal</option>
+                                    <option>Durango </option>
+                                    <option>Estado de México</option>
+                                    <option>Guanajuato</option>
+                                    <option>Guerrero</option>
+                                    <option>Hidalgo</option>
+                                    <option>Jalisco </option>
+                                    <option>Michoacán</option>
+                                    <option>Morelos</option>
+                                    <option>Nayarit </option>
+                                    <option>Nuevo León</option>
+                                    <option>Oaxaca</option>
+                                    <option>Puebla  </option>
+                                    <option>Querétaro</option>
+                                    <option>Quintana Roo</option>
+                                    <option>San Luis Potosí  </option>
+                                    <option>Sinaloa</option>
+                                    <option>Sonora </option>
+                                    <option>Tabasco</option>
+                                    <option>Tamaulipas</option>
+                                    <option>Tlaxcala  </option>
+                                    <option>Veracruz</option>
+                                    <option>Yucatan </option>
+                                    <option>Zacatecas</option>
+                                </select>
+                       
+                            </label>
+
+                        </div>                   
+
+                    <div class="padding">
+                        <button ng-disabled=" !user.nombre_completo || !user.seleccion " id="regis" type="submit" class="button button-dark">Registrar</button>      
+                    </div>
+
+                    </form>
+                </div>
+
+       </ion-content>
+</ion-view>

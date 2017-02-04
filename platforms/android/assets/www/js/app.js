@@ -5,7 +5,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $ionicPlatform.ready(function() {
 
 
-
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     console.log(FileTransfer);
@@ -24,14 +23,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $http.get("http://192.168.0.104/generar.php") 
     .success(function(data) {
 //inicio de prueba spinner
- 
+        
 //fin de prueba spinner
       var a = JSON.stringify(data);
       var b = JSON.parse(a);
       sector = b;
 
       $rootScope.sector = b; 
-      alert(JSON.stringify(sector));
+      
+      //alert(JSON.stringify(sector));
       console.log("ready");
       //alert(JSON.stringify(sector));
 

@@ -6,6 +6,11 @@
 
 @media (max-width: 600px) {
 
+	#detalle-descarga{
+		margin-top: 15px;
+		padding: 30px;
+		background: linear-gradient( 180deg, #367588, #ccc, #367588 );
+	}
 	#atras{
 		background-color: #367588;
 	}
@@ -49,11 +54,12 @@
 	  }
 
 	.sickan{
-					margin-left: 30%;
-					border-radius: 20px;
-					border-width: 4px;
-					border-color: #ffffff;
-
+			margin-left: 30%;
+			border-radius: 20px;
+			border-width: 4px;
+			border-color: #ffffff;
+			box-shadow: inset 0 0 15px 10px #367588;
+			background: linear-gradient( 180deg, #367588, #ccc, #367588 );
 	}
 
 	.sickan::before{
@@ -79,7 +85,6 @@
 	}
 
 	#imagenBienvenido{
-		
 		background: #367588;
 	    -moz-border-radius: auto;
 	    -webkit-border-radius: auto;
@@ -90,15 +95,19 @@
 	  	width: 6.6em;
 		border: double; 
 
-	 	-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	 	/*-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
 	  	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	  	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	  	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);*/
 
 	}
 
 	#formatoTexto{
+		display: inline-block;
 		background-color: #cccccc;
+		opacity: 0.7;
+		box-shadow: inset 0 0 13px 8px #367588;
 		border-radius: 20px;
+		padding: 15px;
 		text-align: justify-all;
 	}
 
@@ -110,11 +119,10 @@
 	}
 
 	#formaBienvenido{
-		background-color: #cccccc;
-		border-radius: 40px;
-		border:double;
-		border-color: #367588;
-		border-width: 8px;
+		border-radius: 30px;
+		opacity: 0.6;
+		background: linear-gradient( 180deg, #f2efef, #ccc, #f2efef );	
+		font-weight: bold;	
 	}
 
 	#colorTextoAcerca{
@@ -329,7 +337,8 @@ option{
 					border-radius: 20px;
 					border-width: 4px;
 					border-color: #ffffff;
-					
+					box-shadow: inset 0 0 15px 10px #367588;
+					background: linear-gradient( 180deg, #367588, #ccc, #367588 );					
 	}
 
 	.sickan::before{
@@ -373,8 +382,12 @@ option{
 	}
 
 	#formatoTexto{
+		display: inline-block;
 		background-color: #cccccc;
+		opacity: 0.7;
+		box-shadow: inset 0 0 13px 8px #367588;
 		border-radius: 20px;
+		padding: 15px;
 		text-align: justify-all;
 	}
 
@@ -386,9 +399,10 @@ option{
 	}
 
 	#formaBienvenido{
-		background-color: #cccccc;
-		border-radius: 40px;
-		
+		border-radius: 30px;
+		opacity: 0.6;
+		background: linear-gradient( 180deg, #f2efef, #ccc, #f2efef );	
+		font-weight: bold;	
 	}
 
 	#colorTextoAcerca{
@@ -601,6 +615,8 @@ option{
 					border-radius: 20px;
 					border-width: 4px;
 					border-color: #ffffff;
+					box-shadow: inset 0 0 15px 10px #367588;
+					background: linear-gradient( 180deg, #367588, #ccc, #367588 );
 	}
 
 	.sickan::before{
@@ -644,8 +660,12 @@ option{
 	}
 
 	#formatoTexto{
+		display: inline-block;
 		background-color: #cccccc;
+		opacity: 0.7;
+		box-shadow: inset 0 0 13px 8px #367588;
 		border-radius: 20px;
+		padding: 15px;
 		text-align: justify-all;
 	}
 
@@ -657,9 +677,10 @@ option{
 	}
 
 	#formaBienvenido{
-		background-color: #cccccc;
-		border-radius: 40px;
-		
+		border-radius: 30px;
+		opacity: 0.6;
+		background: linear-gradient( 180deg, #f2efef, #ccc, #f2efef );	
+		font-weight: bold;		
 	}
 
 	#colorTextoAcerca{

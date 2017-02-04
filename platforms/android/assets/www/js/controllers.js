@@ -1,6 +1,8 @@
 angular.module('starter.controllers', [])
 
-.controller('AcercaCtrl', function($scope) {})
+.controller('AcercaCtrl', function($scope) {
+  
+})
 
 .filter('trustAsResourceUrl',['$sce', function($sce) {
   return function (val) {
@@ -8,10 +10,11 @@ angular.module('starter.controllers', [])
   };
 }])
 
-.controller('registros', function($scope, $ionicModal, $timeout, $http, $location, $window, $state){
-
- 
-
+.controller('registros', function($scope, $ionicModal, $timeout, $http, $location, $window, $state, $ionicLoading){
+  $ionicLoading.show({
+    template: '<ion-spinner icon="lines"></ion-spinner <br/> Cargando',
+    duration: 7000
+  });
   //declaracion de variables inicializandolas como arreglos
   $scope.registros = {};
   $scope.user = {};
@@ -39,9 +42,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SectoresCtrl', function($scope, Sectores) {
-
   $scope.sector = Sectores.all();
-
 })
 
 .controller('SectorDetalleCtrl', function($scope, $stateParams, Sectores, $cordovaFileTransfer) { 
@@ -99,7 +100,11 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('SitiosCtrl', function($scope, $state) {
+.controller('SitiosCtrl', function($scope, $state, $ionicLoading) {
+  $ionicLoading.show({
+    template: '<ion-spinner icon="lines"></ion-spinner <br/> Cargando',
+    duration: 6000
+  });
 
   $scope.link=function(url) {
     window.open('http://datos.gob.ar/','_self');

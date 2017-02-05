@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 .controller('AcercaCtrl', function($scope) {
-  
+ 
 })
 
 .filter('trustAsResourceUrl',['$sce', function($sce) {
@@ -45,7 +45,8 @@ angular.module('starter.controllers', [])
   $scope.sector = Sectores.all();
 })
 
-.controller('SectorDetalleCtrl', function($scope, $stateParams, Sectores, $cordovaFileTransfer) { 
+.controller('SectorDetalleCtrl', function($scope, $stateParams, Sectores, $cordovaFileTransfer, $ionicPopup, $state) { 
+
   $scope.sec = Sectores.get($stateParams.sId);
   $scope.errorsote = null;
   $scope.progreso = null;
@@ -53,9 +54,15 @@ angular.module('starter.controllers', [])
   $scope.abrirEnlace=function(url){
     // Primero se obtiene unicamente el nombre del archivo
     var filename = url.split("/").pop();
-    //Seleccionaa el lugar donnde se guardar y con el nombre anterior
-    var targetPath = cordova.file.externalRootDirectory + filename;
-
+    var confirmPopup = $ionicPopup.confirm({
+     title: 'Confirmar',
+     template: 'Desea Descargar este Archivo?'+filename
+   });
+    confirmPopup.then(function(res) {
+     if(res) {
+        //Seleccionaa el lugar donnde se guardara y con el nombre anterior
+        var targetPath = cordova.file.externalRootDirectory + filename;
+    
     //El pluginn hace todo lo demas
     $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
       //Cuando se termina de descargar el archivo entra a esta parte de la funcion
@@ -74,7 +81,10 @@ angular.module('starter.controllers', [])
       //Y lo unico que se hace aqui es guardar el valor en la variable de progreso para ser mostrada
       $scope.progreso = progress;
     });
-
+     } else {
+       console.log('You are not sure');
+     }
+   });
   }
 
   $scope.cargarNuevosPosts = function(){
@@ -93,11 +103,27 @@ angular.module('starter.controllers', [])
     }) 
     .finally(function() {
       $scope.$broadcast('scroll.refreshComplete');
-    });
+    },3000);
 
   }
 
 
+})
+
+.controller('SitiosMexicoCtrl', function($scope, $state) {
+  
+  $scope.sitiosC=function(){
+              $state.go('tab.tab-sitios');
+  }
+  $scope.link2=function(url){
+    window.open('http://www.gobiernoabierto.cdmx.gob.mx/sigdata/index.php/Publicacion/index','_self');
+  }
+  $scope.link3=function(url){
+    window.open('http://datos.gob.mx/','_self');
+  }
+  $scope.link6=function(url){
+    window.open('http://datosabiertoszacatecas.org.mx/','_self');
+  }
 })
 
 .controller('SitiosCtrl', function($scope, $state, $ionicLoading) {
@@ -109,38 +135,16 @@ angular.module('starter.controllers', [])
   $scope.link=function(url) {
     window.open('http://datos.gob.ar/','_self');
   }
-
   $scope.link1=function(url) {
     window.open('http://dados.gov.br/','_self');
   }
-
- $scope.sitioM=function(){
+  $scope.sitioM=function(){
               $state.go('sitioMexico');
- }
-
-  $scope.sitiosC=function(){
-              $state.go('tab.tab-sitios');
- }
-
-  $scope.link2=function(url){
-    window.open('http://www.gobiernoabierto.cdmx.gob.mx/sigdata/index.php/Publicacion/index','_self');
   }
-
-  $scope.link3=function(url){
-    window.open('http://datos.gob.mx/','_self');
-  }
-
   $scope.link4=function(url){
     window.open('https://data.gov.uk/','_self');
   }
-
   $scope.link5=function(url) {
     window.open('http://publicdata.eu/','_self');
   }
-
-  $scope.link6=function(url){
-    window.open('http://datosabiertoszacatecas.org.mx/','_self');
-  }
-
-
 });

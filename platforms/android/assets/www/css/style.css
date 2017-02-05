@@ -77,9 +77,9 @@
 	.sickan:hover:before {
 		width: 100%;
 		}
-
 	#textoDetalle{
 		background-color: #cccccc;
+		opacity: 0.5;
 		border-radius: 20px;
 		text-align: center;
 	}
@@ -187,12 +187,9 @@ option{
 .fo{
 	background-color: #cccccc;
 }
-
-	#fo{
-		background-color: #cccccc;
-
-	}
-
+#fo{
+	background: linear-gradient( 90deg, #ccc, #f2efef, #ccc);
+}
 #datos{
 	margin-left: 90px;
 	color: #ffffff;
@@ -229,38 +226,37 @@ option{
 #t{
 	color: #ffffff;
 }
-
 	#select {
- 
-  background-color: #367588;
+  	/*background-color: #367588;
 	border: double;
-
-	   -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);*/
+	padding: 5px;
+	box-shadow: inset 0 0 13px 8px #367588;
+	background: linear-gradient( 180deg, #ccc, #367588, #ccc );
 }
 
 #select:hover {
-
-		background:#487a89;
+		padding: 5px;
+		background: linear-gradient( -90deg, #ccc, #367588);
 		border-color: #000000;
 }
-
+h5#estado{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 9px;
+}
 	.fondoapp {
     background-image: url('../img/fondoapp.png');
 		background-repeat:no-repeat;
 		opacity: 15.5;
 		filter:  alpha(opacity=50);
 		/*background-color: #E6E0F8;*/
-		
 }
-
 	#inicio{
 		color: #000000;
-		border: 4px outset #367588;
-    background-color: #cccccc; 
-		
+		box-shadow: inset 0 0 13px 8px #367588;		
 	}
 
 	#atras{
@@ -463,15 +459,12 @@ option{
 	background-color: #367588;
 	color: #ffffff;
 }
-
 .fo{
 	background-color: #cccccc;
 }
-
-	#fo{
-		background-color: #cccccc;
-	}
-
+#fo{
+	background: linear-gradient( 90deg, #ccc, #f2efef, #ccc);
+}
 #datos{
 	margin-left: 90px;
 	color: #ffffff;
@@ -508,24 +501,22 @@ option{
 #t{
 	color: #ffffff;
 }
-
-	#select {
- 
-  background-color: #367588;
-	border: double;
-
-	   -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	
+#select {
+	padding: 5px;
+	box-shadow: inset 0 0 13px 8px #367588;
+	background: linear-gradient( 180deg, #ccc, #367588, #ccc );
 }
 
 #select:hover {
-
-		background:#487a89;
+		padding: 5px;
+		background: linear-gradient( -90deg, #ccc, #367588);
 		border-color: #000000;
 }
-
+h5#estado{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 9px;
+}
 	.fondoapp {
     background-image: url('../img/fondoapp.png');
 		background-repeat:no-repeat;
@@ -537,9 +528,8 @@ option{
 
 	#inicio{
 		color: #000000;
-		border: 4px outset #367588;
-    background-color: #cccccc; 
-		
+		/*border: 4px outset #367588;*/
+    	box-shadow: inset 0 0 13px 8px #367588; 
 	}
 
 	#atras{
@@ -745,11 +735,9 @@ option{
 .fo{
 	background-color: #cccccc;
 }
-
-	#fo{
-		background-color: #cccccc;
-	}
-
+#fo{
+	background: linear-gradient( 90deg, #ccc, #f2efef, #ccc);
+}
 #datos{
 	margin-left: 90px;
 	color: #ffffff;
@@ -786,38 +774,34 @@ option{
 #t{
 	color: #ffffff;
 }
-
-	#select {
- 
-  background-color: #367588;
-	border: double;
-
-	   -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	   box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);
-	
+#select {
+	padding: 5px;
+	box-shadow: inset 0 0 13px 8px #367588;
+	background: linear-gradient( 180deg, #ccc, #367588, #ccc );
 }
 
 #select:hover {
-
-		background:#487a89;
+		padding: 5px;
+		background: linear-gradient( -90deg, #ccc, #367588);
 		border-color: #000000;
 }
-
+h5#estado{
+	font-weight: bold;
+	font-style: italic;
+	font-size: 9px;
+}
 	.fondoapp {
     background-image: url('../img/fondoapp.png');
 		background-repeat:no-repeat;
 		opacity: 15.5;
 		filter:  alpha(opacity=50);
-		/*background-color: #E6E0F8;*/
-		
+		/*background-color: #E6E0F8;*/	
 }
 
 	#inicio{
 		color: #000000;
-		border: 4px outset #367588;
-    background-color: #cccccc; 
-		
+		/*background: linear-gradient( 180deg, #f2efef, #ccc, #f2efef );*/
+    	box-shadow: inset 0 0 13px 8px #367588;		
 	}
 
 	#atras{

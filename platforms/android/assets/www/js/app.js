@@ -112,7 +112,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   .state('sitioMexico', {
         url: '/sitioMexico',
         templateUrl: 'templates/sitioMexico.html',
-        controller: 'SitiosCtrl'
+        controller: 'SitiosMexicoCtrl'
       });
 
   // if none of the above states are matched, use this as the fallback

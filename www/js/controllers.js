@@ -2,7 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('AcercaCtrl', function($scope) {
  
-})
+ })
 
 .filter('trustAsResourceUrl',['$sce', function($sce) {
   return function (val) {
@@ -45,7 +45,7 @@ angular.module('starter.controllers', [])
   $scope.sector = Sectores.all();
 })
 
-.controller('SectorDetalleCtrl', function($scope, $stateParams, Sectores, $cordovaFileTransfer, $ionicPopup, $state) { 
+.controller('SectorDetalleCtrl', function($scope, $stateParams, Sectores, $cordovaFileTransfer, $ionicPopup, $state, $window, $cordovaFileOpener2, $cordovaFile, $cordovaProgress, $cordovaDialogs, $cordovaSpinnerDialog, $cordovaToast) { 
 
   $scope.sec = Sectores.get($stateParams.sId);
   $scope.errorsote = null;
@@ -62,15 +62,30 @@ angular.module('starter.controllers', [])
      if(res) {
         //Seleccionaa el lugar donnde se guardara y con el nombre anterior
         var targetPath = cordova.file.externalRootDirectory + filename;
-    
+          $cordovaToast.show('Descargando...', '500', 'center')
+            .then(function(success) {
+              // success
+            }, function (error) {
+              // error
+          });
+
     //El pluginn hace todo lo demas
     $cordovaFileTransfer.download(url, targetPath, {}, true).then(function (result) {
       //Cuando se termina de descargar el archivo entra a esta parte de la funcion
       //Asi que aqui decimos que ya acabo de descargar
+      //alert("Se finalizo la descarga");
+      /*$cordovaDialogs.alert('message', 'title', 'button name')
+    .then(function() {
+      // callback success
+    });*/
+     $cordovaDialogs.confirm('Archivo guardado en tu memoria SD', 'Descarga exitosa!:', ['OK','Ver'])
+    .then(function(buttonIndex, result) {
+      $scope.open(cordovaFileOpener2.file.externalRootDirectory);
+      var btnIndex = buttonIndex;
+    });
       console.log('Success');
-      alert("Se finalizo la descarga");
       //Simple mensaje para que sepa el usuario que pasa
-      $scope.progreso.loaded = "Descarga exitosa!: Archivo guardado en tu memoria SD";
+      $scope.progreso.loaded = "Progreso Culminado";
     }, function (error) {
       //En caso de que halla un error entra aqui y lo que hacemos es guardar el error en
       //una variable para ser mostrada
@@ -100,11 +115,11 @@ angular.module('starter.controllers', [])
       var newPosts = [];
       $scope.info = data; 
       $scope.info = newPosts.concat($scope.info);
-    }) 
+    }) /*$scope.jsons = newPosts.concat($scope.jsons);*/
     .finally(function() {
+        // Stop the ion-refresher from spinning
       $scope.$broadcast('scroll.refreshComplete');
-    },3000);
-
+    });
   }
 
 

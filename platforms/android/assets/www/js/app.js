@@ -22,9 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 
     $http.get("http://192.168.0.104/generar.php") 
     .success(function(data) {
-//inicio de prueba spinner
-        
-//fin de prueba spinner
+      
       var a = JSON.stringify(data);
       var b = JSON.parse(a);
       sector = b;
